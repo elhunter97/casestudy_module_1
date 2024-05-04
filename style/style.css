@@ -38,27 +38,28 @@
     text-decoration: none;
     cursor: pointer;
 }
-.medicineTable {
+.drugTable {
     width: 70%;
     border: 5px solid #ffe22e;
     border-collapse: inherit;
     border-radius: 20px;
 }
 
-.medicineTable th, .medicineTable td {
+.drugTable th, .drugTable td {
     border: 1px solid black;
     padding: 8px;
     text-align: center;
     border-radius: 10px;
 }
-.medicineTable th{
+.drugTable th{
     background-color: rgb(68, 131, 85);
     font-family: "Exo", serif;
     color: #c6d3d6;
     font-size: 19px;
+    font-weight: bold;
 }
 
-.medicineTable td{
+.drugTable td{
     font-family: "Exo", serif;
     color: #ffffff;
 }
@@ -107,7 +108,7 @@ h1 span {
     color: white;
 }
 
-#listDrug{
+#drugHeadTB{
     font-family: "Montserrat Alternates", serif;
     color: #cfc04b;
 }

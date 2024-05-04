@@ -60,8 +60,11 @@ function clear(){
 }
 
 function deleteDrug(sku){
-    manage.delete(sku);
-    manage.show();
+    if(confirm('Bạn có chắc chắn muốn xóa sản phẩm này')){
+        manage.delete(sku);
+        manage.show();
+    } else manage.show();
+
 }
 
 let skucode = 0;
