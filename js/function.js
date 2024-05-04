@@ -6,7 +6,7 @@ function openModal(){
 function closeModal(){
     modal.style.display = 'none';
 }
-let drug1= new Drug('amoxicillin',123456789,'Thuốc điều trị',12000,12);
+let drug1= new Drug(123456789,'amoxicillin','Thuốc điều trị',12000,12);
 let arr= [drug1];
 let manage = new DrugManagement(arr);
 
@@ -24,26 +24,31 @@ function addDrug(){
         alert('Wrong price');
         return;
     }
-    let existingDrug = manage.findDrug(sku);
-    if(existingDrug){
-        if(existingDrug.nameDrug === nameDrug && existingDrug.typeDrug === typeDrug
-            && Number(existingDrug.price) === Number(price)){
-            existingDrug.quantity = Number(existingDrug.quantity) + Number(quantity);
-            // let drug = new Drug(nameDrug,sku,typeDrug,price,existingDrug);
-            // manage.addDrug(drug);
-            manage.show();
-            clear();
-            closeModal();
-        } else {
-            alert('SKU da ton tai');
-        }
-    } else{
-        let drug = new Drug(nameDrug,sku,typeDrug,price,quantity);
-        manage.addDrug(drug);
-        manage.show();
-        clear();
-        closeModal();
+
+    let drug = new Drug(sku,nameDrug,typeDrug,price,quantity);
+    manage.addDrug(drug);
+    manage.show();
+    clear();
+    closeModal();
+}
+function checkSKU(){
+   let sku = document.getElementById('skucode').value;
+    let skuRegex = /^\d{9}$/; // Biểu thức kiểm tra SKU là 9 chữ số
+    let existDrug = manage.findDrug(sku);
+    if (!skuRegex.test(sku)) {
+        alert('Mã SKU phải có 9 chữ số');
+        document.getElementById('skucode').focus();
+        return 0;
     }
+}
+
+function checkSameSKU(sku){
+    sku = document.getElementById('skucode').value;
+    let existDrug = manage.findDrug(sku);
+    if (existDrug){
+        return 0;
+    }
+    return 1;
 }
 
 function clear(){

@@ -1,5 +1,5 @@
 class Drug {
-    constructor(nameDrug,SKU,typeDrug,price,quantity) {
+    constructor(SKU,nameDrug,typeDrug,price,quantity) {
         this.nameDrug = nameDrug;
         this.typeDrug = typeDrug;
         this.price = price;
@@ -39,7 +39,7 @@ class Drug {
     setQuantity(quantity){
         this.quantity = quantity;
     }
-    edit(nameDrug,SKU,typeDrug,price,quantity){
+    edit(SKU,nameDrug,typeDrug,price,quantity){
         this.nameDrug = nameDrug;
         this.typeDrug = typeDrug;
         this.price = price;

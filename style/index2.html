@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haisenberg Drug Store</title>
-    <link rel="icon" href="img/wwicon.ico">
+    <link rel="icon" href="/img/wwicon.ico">
 </head>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tourney|Saira|Montserrat Alternates|Exo|Josefin Sans&effect=neon|outline|emboss|shadow-multiple">
+
 <body>
-<h1>QUẢN LÝ CỬA HÀNG THUỐC THẦY BẠCH</h1>
-<button onclick="openModal()">Thêm sản phẩm</button>
+<h1>QUẢN LÝ CỬA HÀNG THUỐC THẦY BẠCH<img src="/img/ww.png" alt="ww" style="width: 50px"></h1>
+<button onclick="openModal()" class="btnAddmodal">Thêm sản phẩm</button>
 <div class="modal-Container">
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
         <h2>Thêm thuốc</h2>
         <form id="addForm">
+            <label for="skucode">Mã SKU</label>
+            <input type="number" id="skucode" onchange="checkSKU()"><br><br>
             <label for="nameDrug">Tên thuốc</label>
             <input type="text" id="nameDrug"><br><br>
-            <label for="skucode">Mã SKU</label>
-            <input type="number" id="skucode"><br><br>
             <label for="typeDrug">Loại thuốc</label>
             <select id="typeDrug">
                 <option value="Thuốc điều trị">Thuốc điều trị</option>
@@ -37,14 +39,14 @@
     <br><br>
     <div class="medicine-list">
         <table class="medicineTable" id="medicineTable">
-            <caption>Danh sach thuoc</caption>
+            <h2 style="margin-left: 400px" id="listDrug">DANH SÁCH THUỐC</h2>
             <thead>
             <tr>
-                <th style="width: 150px">Ten thuoc</th>
                 <th>Ma SKU</th>
-                <th>Loai thuoc</th>
-                <th>Gia(vnd)</th>
-                <th>So luong ton kho</th>
+                <th style="width: 150px">Tên thuốc</th>
+                <th>Loại thuốc</th>
+                <th>Giá(vnd)</th>
+                <th>Số lượng tồn kho</th>
             </tr>
             </thead>
             <tbody id="drugListBody"></tbody>
@@ -52,8 +54,8 @@
 
     </div>
 </div>
-<script src="drug.js"></script>
-<script src="drugManagement.js"></script>
-<script src="function.js"></script>
+<script src="/js/drug.js"></script>
+<script src="/js/drugManagement.js"></script>
+<script src="/js/function.js"></script>
 </body>
 </html>

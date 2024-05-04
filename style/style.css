@@ -40,39 +40,69 @@
 }
 .medicineTable {
     width: 70%;
-    border: 1px solid #888;
-    border-collapse: collapse;
+    border: 5px solid #ba9805;
+    border-collapse: inherit;
+    border-radius: 20px;
 }
 
 .medicineTable th, .medicineTable td {
     border: 1px solid black;
     padding: 8px;
-    text-align: left;
+    text-align: center;
+    border-radius: 10px;
+}
+.medicineTable th{
+    background-color: rgba(94, 140, 94, 0.86);
+    font-family: "Exo", serif;
+    color: #ffe22e;
 }
 
-.medicineTable th {
-    background-color: antiquewhite;
-}
+
 tr:nth-child(odd) {
-    background-color: #aaaaaa;
+    background-color: #c6d3d6;
 }
-
+tr:nth-child(even) {
+    background-color: #b1b1bd;
+}
 body{
-    background-image: url("img/L.png");
+    background-image: url("/img/background.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+}
 
-}
-h1{
-    background-color: antiquewhite;
-    width: fit-content;
-    font-family: "Courier New", serif;
-    border-radius: 10px;
-    border: 2px solid darkgoldenrod;
-}
 
 button{
-    background-color: antiquewhite;
+    border-radius: 3px;
+    font-family: "Josefin Sans", serif;
+    border: 1px solid black;
+}
+h1 {
+    display: flex; /* Sử dụng Flexbox */
+    align-items: center; /* Căn chỉnh các phần tử theo chiều dọc (trục chính) */
+    font-family: "Tourney", sans-serif;
+    color: #cfc04b;
+    font-size: 50px;
+    text-shadow: 3px 3px 3px;
+}
+
+h1 span {
+    margin-right: 10px; /* Khoảng cách giữa chữ và ảnh */
+}
+
+.btnAddmodal{
+    border: 5px solid #ba9805;
+    border-radius: 30px;
+    background-color: rgba(71, 106, 71, 0.86);
+    width: 200px;
+    height: 70px;
+    font-family: "Montserrat Alternates", serif;
+    font-size: 20px;
+    color: white;
+}
+
+#listDrug{
+    font-family: "Montserrat Alternates", serif;
+    color: #cfc04b;
 }
 
